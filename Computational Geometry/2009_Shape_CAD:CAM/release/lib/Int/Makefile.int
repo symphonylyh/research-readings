@@ -1,0 +1,25 @@
+# Copyright (C) Massachusetts Institute of Technology, 1995-2008
+# All rights reserved
+
+# Makefile for interval library
+
+INCL = ../../include
+INT = ../libInt.a
+
+.SUFFIXES: .cc
+.cc.o:
+	g++ -c $(DEBUG) -I$(INCL) -g $<
+
+OBJS = interval.o refinInterval.o
+          
+$(INT): Makefile $(OBJS)
+	rm -f $(INT)
+	ar ruv $@ $(OBJS)
+
+# force recompile and relink
+remake:
+	rm -f *.o
+
+# delete backups (*~) and objects (*.o)
+clean:
+	rm -f *.o *~ \#*

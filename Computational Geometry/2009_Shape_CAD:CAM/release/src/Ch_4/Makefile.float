@@ -1,0 +1,34 @@
+# Copyright (C) 2008 Massachusetts Institute of Technology, Cambridge, MA
+# All rights reserved
+
+INCL = ../../include
+LIBDIR =../../lib
+
+LIBS = -lfl -lm
+
+SOLLEXFPA = ./sollex-fpa
+SOLBERNFPA = ./solbern-fpa
+SOLPOWFPA = ./solpow-fpa
+
+.SUFFIXES: .cc
+.cc.o:
+	g++ -c -DUSE_FLOAT -I$(INCL) $<
+
+all:  $(SOLLEXFPA) $(SOLBERNFPA) $(SOLPOWFPA)
+
+OBJ1 = sollex.o
+OBJ2 = solbern.o
+OBJ3 = solpow.o
+
+
+$(SOLLEXFPA) : $(OBJ1)
+	g++ -o $@ $(OBJ1) -L$(LIBDIR) -lflex -lfsimp -lInt ${LIBS}
+
+$(SOLBERNFPA) : $(OBJ2)
+	g++ -o $@ $(OBJ2) -L$(LIBDIR) -lflex -lfsimp -lInt ${LIBS}
+
+$(SOLPOWFPA) : $(OBJ3)
+	g++ -o $@ $(OBJ3) -L$(LIBDIR) -lflex -lfsimp -lInt ${LIBS}
+
+
+

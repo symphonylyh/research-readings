@@ -1,0 +1,19 @@
+# Copyright (C) Massachusetts Institute of Technology, 1995-2008
+# All rights reserved
+
+# projected-polyhedron nonlinear equation system solver
+
+INCL = ../../include
+SIMP = ../lib$(FI)simp.a
+
+.SUFFIXES: .cc
+.cc.o:
+	g++ -c $(DUSE) $(DEBUG) -I$(INCL) $<
+
+OBJS =  $(WRAP_SOLVER) bb_box.o compiler.o convPolyBox.o lib1.o mn_alloc.o \
+	mn_basis.o mn_ops.o mn_sub.o $(SEPARATE) si_inter.o \
+	si_inter_test.o si_phull.o simpoly.o 
+
+$(SIMP): Makefile $(OBJS)
+	rm -f $(SIMP)
+	ar ruv $@ $(OBJS)

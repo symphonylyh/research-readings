@@ -1,0 +1,27 @@
+# Copyright (C) 2008 Massachusetts Institute of Technology, Cambridge, MA
+# All rights reserved
+
+INCL = ../../include
+LIBDIR =../../lib
+
+LIBS = -lm
+
+SOLBERNRIA = ./ex.5.9
+SOLPOWRIA = ./ex.5.6
+
+.SUFFIXES: .cc
+.cc.o:
+	g++ -c -DUSE_INTERVAL -I$(INCL) $<
+
+all:  $(SOLBERNRIA) $(SOLPOWRIA)
+
+OBJ2 = solbern.o
+OBJ3 = solpow.o
+
+$(SOLBERNRIA) : $(OBJ2)
+	g++ -o $@ $(OBJ2) -L$(LIBDIR) -lIlex -lIsimp -lInt ${LIBS}
+
+$(SOLPOWRIA) : $(OBJ3)
+	g++ -o $@ $(OBJ3) -L$(LIBDIR) -lIlex -lIsimp -lInt ${LIBS}
+
+

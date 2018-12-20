@@ -1,0 +1,35 @@
+2	2
+
+2 2
+1.0
+-4.0
+4.0
+-4.0
+0.0
+0.0
+4.0
+0.0
+0.0
+
+2 2
+9.0
+-24.0
+16.0
+-4.0
+0.0
+0.0
+4.0
+0.0
+0.0
+
+Note: In order to use the IPP solver, we need a re-parametrization such that:
+      x = 4t - 2, y = 2s -1 where 0 <= s,t <= 1
+      and re-formulate the given equations f and g to get coefficients data shown above.
+
+      We also note that a lot of root boxes are generated during solution process
+      due to the tangential intersection at (s,t)=(0.5,1) i.e. (x,y)=(2,0).
+      Such root boxes are merged and consolidated as "one" root through the 
+      root consolidation process.
+
+      Also note you will need to substitute the resulting roots in (s,t) into:
+      x = 4t - 2 and y = 2s -1 to have the roots in (x,y) as mentioned above.
