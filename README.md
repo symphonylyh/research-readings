@@ -20,8 +20,8 @@ Like this
 <a href="http://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/">Link</a>
 </summary>
 <p>
-#### yes, even hidden code blocks!
 
+#### yes, even hidden code blocks!
 ```python
 print("hello world!")
 ```
