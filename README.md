@@ -6,6 +6,7 @@ This folder collects research readings (Books, Papers, Code, etc.)
 * *Changchang Wu's VisualSfM Toolbox*. [[link]](http://ccwu.me/vsfm/) [code]
 * *Noah Snavely's Bundler Toolbox*. [[link]](http://www.cs.cornell.edu/~snavely/bundler/) [[github]](https://github.com/snavely/bundler_sfm) [code]
 * *Peter Kovesi's MATLAB Toolbox*. [[link]](https://www.peterkovesi.com/matlabfns/index.html) [code]
+* *David Tsch's CImg Toolbox*. [[github]](https://github.com/dtschump/CImg)
 
 # Computational Geometry
 
